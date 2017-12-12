@@ -1,67 +1,75 @@
 /*Default CSS*/
 body{
-	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
+	
 }
 /* Large screens ----------- */
 @media only screen 
 and (min-width : 1824px) {
-.sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
+/* menu bar effect */
+  #menuIcon{
+  	position: fixed;
+  	top: 40px;
+  	left: 60px;
+  	cursor: pointer;
+  }
+  #menuBar{
+    visibility: hidden;
+    position: fixed;
+    top: 40px;
+    left: 100px;
+    opacity:0;
+  }
+  .oneItems{
+    display: inline-block;
+    margin-left: 15px;
+  }
+  .twoItems{
+    display: inline-block;
+    margin-left: 35px;
+  }
+  .threeItems{
+    display: inline-block;
+    margin-left: 20px;
+  }
+  .oneItems a:hover, .twoItems a:hover, .threeItems a:hover{
+    color: #6C2DC7;
+  }
+  .oneItems a, .twoItems a, .threeItems a{
+    position: relative;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 10px;
+    color: black;
+  }
+  .oneItems a:before, .twoItems a:before, .threeItems a:before{
     display: block;
-    transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
     position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-#menuIcon{
-	position: fixed;
-	top: 40px;
-	left: 60px;
-	cursor: pointer;
-}
-#menuIcon:hover{
-	animation: shake 0.5s; 
-    /* When the animation is finished, start again */
-    animation-iteration-count:0.5; 
-}
-
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
-}
+    content: "";
+    height: 1px;
+    width: 0;
+    background: #6C2DC7;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    left: 50%;
+    bottom: 0;
+  }
+  .oneItems a:after, .twoItems a:after, .threeItems a:after{
+    display: block;
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 0;
+    background-color: #6C2DC7;
+    transition: width 0.3s ease-in-out;
+    left: 50%;
+    bottom: 0;
+  }
+  .oneItems a:hover:before, .twoItems a:hover:before, .threeItems a:hover:before{
+    width: 50%;
+    left: 0;
+  }
+  .oneItems a:hover:after, .twoItems a:hover:after, .threeItems a:hover:after{
+    width: 50%;
+  }
 }
 
 /* Smartphones (portrait and landscape) ----------- */
