@@ -38,28 +38,32 @@ and (min-width : 1824px) {
     position: relative;
     text-decoration: none;
     font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     color: black;
   }
   .oneItems a:before, .twoItems a:before, .threeItems a:before{
+    -webkit-transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
     display: block;
     position: absolute;
     content: "";
     height: 1px;
     width: 0;
     background: #6C2DC7;
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
     left: 50%;
     bottom: 0;
   }
   .oneItems a:after, .twoItems a:after, .threeItems a:after{
+  	-webkit-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
     display: block;
     position: absolute;
     content: "";
     height: 1px;
     width: 0;
     background-color: #6C2DC7;
-    transition: width 0.3s ease-in-out;
     left: 50%;
     bottom: 0;
   }
