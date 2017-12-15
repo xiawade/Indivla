@@ -2,78 +2,75 @@
 body{
 	
 }
+@-webkit-keyframes nameAnimation {
+  from { bottom:-50px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+@keyframes nameAnimation { 
+  from{ bottom:-50px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+@-webkit-keyframes indicateAnimation {
+  from { bottom:-60px; opacity:0 } 
+  to { bottom:0px; opacity:0.5 }
+}
+@keyframes indicateAnimation { 
+  from{ bottom:-60px; opacity:0 } 
+  to{ bottom:0; opacity:0.5 }
+}
+
 /* Large screens ----------- */
 @media only screen 
 and (min-width : 1824px) {
-/* menu bar effect */
-  #menuIcon{
-  	position: fixed;
-  	top: 40px;
-  	left: 60px;
-  	cursor: pointer;
-  }
-  #menuBar{
-    visibility: hidden;
-    position: fixed;
-    top: 40px;
-    left: 100px;
-    opacity:0;
-  }
-  .oneItems{
-    display: inline-block;
-    margin-left: 15px;
-  }
-  .twoItems{
-    display: inline-block;
-    margin-left: 35px;
-  }
-  .threeItems{
-    display: inline-block;
-    margin-left: 20px;
-  }
-  .oneItems a:hover, .twoItems a:hover, .threeItems a:hover{
-    color: #6C2DC7;
-  }
-  .oneItems a, .twoItems a, .threeItems a{
-    position: relative;
-    text-decoration: none;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 12px;
-    color: black;
-  }
-  .oneItems a:before, .twoItems a:before, .threeItems a:before{
-    -webkit-transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
-    -o-transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
-    display: block;
-    position: absolute;
-    content: "";
-    height: 1px;
-    width: 0;
-    background: #6C2DC7;
-    left: 50%;
-    bottom: 0;
-  }
-  .oneItems a:after, .twoItems a:after, .threeItems a:after{
-  	-webkit-transition: width 0.3s ease-in-out;
-    -o-transition: width 0.3s ease-in-out;
-    transition: width 0.3s ease-in-out;
-    display: block;
-    position: absolute;
-    content: "";
-    height: 1px;
-    width: 0;
-    background-color: #6C2DC7;
-    left: 50%;
-    bottom: 0;
-  }
-  .oneItems a:hover:before, .twoItems a:hover:before, .threeItems a:hover:before{
-    width: 50%;
-    left: 0;
-  }
-  .oneItems a:hover:after, .twoItems a:hover:after, .threeItems a:hover:after{
-    width: 50%;
-  }
+	.mainDiv{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		padding-right: 0px;
+		padding-left: 0px;
+		background-color: black;
+		text-align: center;
+	}
+	#middleBlock{
+		position: absolute;
+		width: 100%;
+		top: 40%;
+		z-index: 0;
+		text-align: center;
+	}
+	#myName p{
+		-webkit-animation-name: nameAnimation;
+  		-webkit-animation-duration: 0.5s;
+  		animation-name: nameAnimation;
+  		animation-duration: 0.5s;
+		position: relative;
+		width: auto;
+		color: white;
+		font-size: 100px;
+		font-family: Impact, Charcoal, sans-serif;
+	}
+	#myName p:before{
+		content: "";
+		position: absolute;
+		bottom: 0px;
+		right: 0px;
+		height: 2px;
+		width: 100%;
+		background-color: white;
+	}
+	#indicator p{
+		-webkit-animation-name: indicateAnimation;
+	  	-webkit-animation-duration: 1s;
+	  	animation-name: indicateAnimation;
+	  	animation-duration: 1s;
+		position: relative;
+		color: white;
+		font-size: 20px;
+		font-family: Impact, Charcoal, sans-serif;
+		opacity: 0.5;
+	}
 }
 
 /* Smartphones (portrait and landscape) ----------- */
